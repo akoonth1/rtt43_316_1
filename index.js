@@ -53,6 +53,7 @@ topMainEl.style.height = "100%";
 
 topMainEl.style.backgroundColor = "var(--top-menu-bg)";
 
+topMainEl.classList.add("flex-around");
 
 //Part 3: Adding Menu Buttons
 
@@ -61,3 +62,14 @@ topMainEl.style.backgroundColor = "var(--top-menu-bg)";
 // For this project, copy the following data structure to the top of your index.js file;
 // you will use it to create your menu buttons.
 
+for(let i=0; i<menuLinks.length; i++){
+    let a = document.createElement("a");
+    a.textContent = menuLinks[i].text;
+    a.href = menuLinks[i].href;
+    topMainEl.appendChild(a);
+}
+
+
+//Part4
+
+//Later
