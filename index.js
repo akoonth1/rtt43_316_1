@@ -213,7 +213,7 @@ function buildSubmenu(links) {
   // Iterate over each link in the input array
   links.forEach(link => {
     let newlink = document.createElement("a");
-    newlink.setAttribute("href", "#");
+    //newlink.setAttribute("href", "#");
     newlink.textContent = link.text;
     subMenuEl.appendChild(newlink);
   });
@@ -234,27 +234,40 @@ console.log(e.target + " was clicked sub");
     subMenuEl.style.top = "0";
   }
 
+//console.log(e.target.parentNode.classList)
+
+//remove active class from all top menu links
+for (let link of topMenuLinks) {
+  link.classList.remove("active");
+}
+
+
 for (let link of subMenuEl.getElementsByTagName("a")) {
   link.classList.remove("active");
 }
   
-   //e.target.classList.remove("active");
+   e.target.classList.remove("active");
   if(e.target.classList.contains("active")){
     e.target.classList.remove("active")
     subMenuEl.style.top = "0";
-
   }
+
   else{
     e.target.classList.add("active");
   }
 
   console.log(e.target.textContent);
 
-  if ( subMenuEl.style.top == "0") {
-    mainEl.innerHTML = "<h1>About</h1>";
-  }
+  // if ( subMenuEl.style.top == "0") {
+  //   mainEl.innerHTML = "<h1>About</h1>";
+  // }
 
-  mainEl.innerHTML = `<h1>${e.target.text} </h1>`;
+  mainEl.innerHTML = `<h1>${e.target.text}</h1>`;
 
   console.log(e.target.parentNode.textContent);
 });
+
+
+
+
+
